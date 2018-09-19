@@ -1,32 +1,32 @@
-import React , { Component } from 'react';
-import dummyListData from '../dummy_data/list_data';
+import React  from 'react';
+// import React , { Component } from 'react';
+// import dummyListData from '../dummy_data/list_data';
 
 // console.log('Dummydata',dummyListData);
 
-class List extends Component{
-    state = {
-        list: []
-    }
+const List = (props) => {
+    // state = {
+    //     list: []
+    // }
 
-    componentDidMount(){
-        this.getListData();
-    }
+    // componentDidMount(){
+    //     this.getListData();
+    // }
 
-    getListData(){
-        // Call sever to get data
+    // getListData(){
+    //     // Call sever to get data
 
-        this.setState({
-            list: dummyListData
-        })
-    }
+    //     this.setState({
+    //         list: dummyListData
+    //     })
+    // }
 
-    render(){
+    // render(){
         // console.log('State', this.state);
-        const listElements = this.state.list.map((item, index) =>{
+        // const listElements = this.state.list.map((item, index) =>{
+            const listElements = props.data.map((item, index) =>{    
             return <li className="collection-item" key={item._id}>{item.title}</li>
         });
-
-
 
         return(
               <div>
@@ -36,7 +36,7 @@ class List extends Component{
                 </ul>
              </div>
         );
-    }
+    // }
 }
 
 export default List;
