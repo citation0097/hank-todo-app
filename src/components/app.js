@@ -27,6 +27,7 @@ class App extends Component {
         this.setState({
             list: [item,...this.state.list]
         });
+        
     }
     render(){
         const {list} = this.state;
