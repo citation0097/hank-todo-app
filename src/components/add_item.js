@@ -12,6 +12,11 @@ class AddItem extends React.Component{
         e.preventDefault();
         console.log('New Item', this.state);
         this.props.add(this.state);
+
+        this.setState({
+            title: '',
+            details: ''
+        });
     }
 
     render(){

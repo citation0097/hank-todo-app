@@ -1,4 +1,5 @@
 import React  from 'react';
+import Item from './item';
 // import React , { Component } from 'react';
 // import dummyListData from '../dummy_data/list_data';
 
@@ -25,7 +26,9 @@ const List = (props) => {
         // console.log('State', this.state);
         // const listElements = this.state.list.map((item, index) =>{
             const listElements = props.data.map((item, index) =>{    
-            return <li className="collection-item" key={item._id}>{item.title}</li>
+            // return <li className="collection-item" key={item._id}>{item.title}</li>
+            // return <Item key={item._id} item={item} index={index}/>
+            return <Item key={item._id} item={item} delete = { () => props.delete(index) }/>
         });
 
         return(
